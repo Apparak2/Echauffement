@@ -34,8 +34,9 @@ class Program
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
         Console.WriteLine("Combien d'euros possèdes-tu ?");
         int nbEuro = Convert.ToInt32(Console.ReadLine());
-        
+
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
+        Console.WriteLine("Épée de l'abus : 1800.00\nArc de la désobligeance : 500.00\nSabre de l'irrespect : 250.00\nPistolet de la nonchalance : 800.00");
         
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
         
