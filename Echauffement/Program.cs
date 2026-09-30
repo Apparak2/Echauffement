@@ -10,9 +10,14 @@ class Program
 
         // Etape 1 : présentez-vous en écrivant votre prénom et votre jeu préféré
         Console.WriteLine("Je m'appelle Benjamin, mon jeu préféré est Outer Wilds.");
-        
+
         // Etape 2 : demandez à l'utilisateur son prénom et son âge
-        
+            Console.WriteLine("Entrez votre prénom");
+            String userName = Console.ReadLine();
+
+            Console.WriteLine("Entrez votre âge");
+            int userAge = Convert.ToInt32(Console.ReadLine());
+
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateur
         
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
