@@ -49,6 +49,18 @@ class Program
         int[] weaponsPrice = { 1800, 500, 250, 800 };
 
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
+        String[] weaponsName = { "L'épée de l'abus'", "L'arc de la désobligeance", "Le sabre de l'irrespect", "Le pistolet de la nonchalance" };
+        bool hasEnoughMoney = nbEuro >= weaponsPrice[nbWeapon - 1];
+        String finalMess = "";
+        if (!hasEnoughMoney)
+        {
+            finalMess = "Tu n'as pas assez d'argent";
+        }
+        else
+        {
+            finalMess = $"{weaponsName[nbWeapon-1]} a été acheté(e)";
+        }
+        Console.WriteLine(finalMess);
         
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
             // Lorsque l'utilisateur respecte ces demandes, retirez le prix de l'arme de l'argent de l'utilisateur, puis confirmez à l'utilisateur que l'action a été effectuée 
