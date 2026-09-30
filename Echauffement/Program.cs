@@ -37,9 +37,17 @@ class Program
 
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
         Console.WriteLine("Épée de l'abus : 1800.00\nArc de la désobligeance : 500.00\nSabre de l'irrespect : 250.00\nPistolet de la nonchalance : 800.00");
-        
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
-        
+        Console.WriteLine("Choisissez une arme (entre 1 et 4)");
+        int nbWeapon = Convert.ToInt32(Console.ReadLine());
+        while (!(nbWeapon >= 1 && nbWeapon <= 4))
+        {
+            Console.WriteLine("Ce n'est pas une réponse valide !\nChoisissez une arme (entre 1 et 4)");
+            nbWeapon = Convert.ToInt32(Console.ReadLine());
+        }
+
+        int[] weaponsPrice = { 1800, 500, 250, 800 };
+
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
         
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
