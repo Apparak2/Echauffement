@@ -12,22 +12,25 @@ class Program
         Console.WriteLine("Je m'appelle Benjamin, mon jeu préféré est Outer Wilds.");
 
         // Etape 2 : demandez à l'utilisateur son prénom et son âge
-            Console.WriteLine("Entrez votre prénom");
-            String userName = Console.ReadLine();
+        Console.WriteLine("Entrez votre prénom");
+        String userName = Console.ReadLine();
 
-            Console.WriteLine("Entrez votre âge");
-            int userAge = Convert.ToInt32(Console.ReadLine());
-
+        Console.WriteLine("Entrez votre âge");
+        int userAge = Convert.ToInt32(Console.ReadLine());
+            
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateur
         String ageVerification = "";
+        bool isMajor;
 
         if (userAge < 18)
         {
             ageVerification = "Tu es mineur";
+            isMajor = false;
         }
         else
         {
             ageVerification = "Tu es majeur";
+            isMajor = true;
         }
         Console.WriteLine(ageVerification);
 
@@ -52,13 +55,19 @@ class Program
         String[] weaponsName = { "L'épée de l'abus'", "L'arc de la désobligeance", "Le sabre de l'irrespect", "Le pistolet de la nonchalance" };
         bool hasEnoughMoney = nbEuro >= weaponsPrice[nbWeapon - 1];
         String finalMess = "";
-        if (!hasEnoughMoney)
+        if (!isMajor)
+        {
+            finalMess = "Tu n'es pas un adulte";
+        }
+        else if (!hasEnoughMoney)
         {
             finalMess = "Tu n'as pas assez d'argent";
         }
         else
         {
-            finalMess = $"{weaponsName[nbWeapon-1]} a été acheté(e)";
+            nbEuro -= weaponsPrice[nbWeapon - 1];
+            finalMess = $"{weaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s)";
+            
         }
         Console.WriteLine(finalMess);
         
