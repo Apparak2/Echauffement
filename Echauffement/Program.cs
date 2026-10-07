@@ -63,13 +63,9 @@ class Program
         
         bool hasEnoughMoney = nbEuro >= WeaponsPrice[nbWeapon - 1];
         String finalMess = "";
-        if (!isMajor)
+        if (!(isMajor && hasEnoughMoney))
         {
-            finalMess = "Tu n'es pas un adulte";
-        }
-        else if (!hasEnoughMoney)
-        {
-            finalMess = "Tu n'as pas assez d'argent";
+            finalMess = "Tu ne peux pas acheter cette arme";
         }
         else
         {
