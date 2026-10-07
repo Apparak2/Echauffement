@@ -39,7 +39,15 @@ class Program
         float nbEuro = Convert.ToSingle(Console.ReadLine());
 
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
-        Console.WriteLine("Épée de l'abus : 1800.00\nArc de la désobligeance : 500.00\nSabre de l'irrespect : 250.00\nPistolet de la nonchalance : 800.00");
+        String[] WeaponsName = { "L'épée de l'abus", "L'arc de la désobligeance", "Le sabre de l'irrespect", "Le pistolet de la nonchalance" };
+        int[] WeaponsPrice = { 1800, 500, 250, 800 };
+        String WeaponsMessage = "";
+        for(int i = 0; i<WeaponsName.Length; i++)
+        {
+            WeaponsMessage += $"{WeaponsName[i]} : {WeaponsPrice[i]}.00\n";
+        }
+
+        Console.WriteLine(WeaponsMessage);
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
         Console.WriteLine("Choisissez une arme (entre 1 et 4)");
         int nbWeapon = Convert.ToInt32(Console.ReadLine());
@@ -49,11 +57,11 @@ class Program
             nbWeapon = Convert.ToInt32(Console.ReadLine());
         }
 
-        int[] weaponsPrice = { 1800, 500, 250, 800 };
+        
 
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
-        String[] weaponsName = { "L'épée de l'abus", "L'arc de la désobligeance", "Le sabre de l'irrespect", "Le pistolet de la nonchalance" };
-        bool hasEnoughMoney = nbEuro >= weaponsPrice[nbWeapon - 1];
+        
+        bool hasEnoughMoney = nbEuro >= WeaponsPrice[nbWeapon - 1];
         String finalMess = "";
         if (!isMajor)
         {
@@ -65,8 +73,8 @@ class Program
         }
         else
         {
-            nbEuro -= weaponsPrice[nbWeapon - 1];
-            finalMess = $"{weaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s)";
+            nbEuro -= WeaponsPrice[nbWeapon - 1];
+            finalMess = $"{WeaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s)";
             
         }
         Console.WriteLine(finalMess);
