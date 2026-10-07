@@ -70,7 +70,7 @@ class Program
         else
         {
             nbEuro -= WeaponsPrice[nbWeapon - 1];
-            FinalMess = $"{WeaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s)";
+            FinalMess = $"{WeaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s). Merci {UserName}.";
             
         }
         Console.WriteLine(FinalMess);
