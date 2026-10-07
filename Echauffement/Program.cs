@@ -13,26 +13,26 @@ class Program
 
         // Etape 2 : demandez à l'utilisateur son prénom et son âge
         Console.WriteLine("Entrez votre prénom");
-        String userName = Console.ReadLine();
+        String UserName = Console.ReadLine();
 
         Console.WriteLine("Entrez votre âge");
         int userAge = Convert.ToInt32(Console.ReadLine());
             
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateur
-        String ageVerification = "";
+        String AgeVerificationMess = "";
         bool isMajor;
 
         if (userAge < 18)
         {
-            ageVerification = "Tu es mineur";
+            AgeVerificationMess = "Tu es mineur";
             isMajor = false;
         }
         else
         {
-            ageVerification = "Tu es majeur";
+            AgeVerificationMess = "Tu es majeur";
             isMajor = true;
         }
-        Console.WriteLine(ageVerification);
+        Console.WriteLine(AgeVerificationMess);
 
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
         Console.WriteLine("Combien d'euros possèdes-tu ?");
@@ -62,18 +62,18 @@ class Program
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
         
         bool hasEnoughMoney = nbEuro >= WeaponsPrice[nbWeapon - 1];
-        String finalMess = "";
+        String FinalMess = "";
         if (!(isMajor && hasEnoughMoney))
         {
-            finalMess = "Tu ne peux pas acheter cette arme";
+            FinalMess = "Tu ne peux pas acheter cette arme";
         }
         else
         {
             nbEuro -= WeaponsPrice[nbWeapon - 1];
-            finalMess = $"{WeaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s)";
+            FinalMess = $"{WeaponsName[nbWeapon-1]} a été acheté(e)\n{nbEuro} euro(s) restant(s)";
             
         }
-        Console.WriteLine(finalMess);
+        Console.WriteLine(FinalMess);
         
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
             // Lorsque l'utilisateur respecte ces demandes, retirez le prix de l'arme de l'argent de l'utilisateur, puis confirmez à l'utilisateur que l'action a été effectuée 
