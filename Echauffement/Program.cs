@@ -52,7 +52,7 @@ class Program
         int[] weaponsPrice = { 1800, 500, 250, 800 };
 
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
-        String[] weaponsName = { "L'épée de l'abus'", "L'arc de la désobligeance", "Le sabre de l'irrespect", "Le pistolet de la nonchalance" };
+        String[] weaponsName = { "L'épée de l'abus", "L'arc de la désobligeance", "Le sabre de l'irrespect", "Le pistolet de la nonchalance" };
         bool hasEnoughMoney = nbEuro >= weaponsPrice[nbWeapon - 1];
         String finalMess = "";
         if (!isMajor)
